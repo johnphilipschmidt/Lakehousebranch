@@ -38,6 +38,7 @@ public class ActivityController {
 		service.save(activity);
 		
 		return "redirect:/activity";
+
 	}
 	
 	@RequestMapping("/activity/edit/{id}")
@@ -52,6 +53,6 @@ public class ActivityController {
 	@RequestMapping("/activity/delete/{id}")
 	public String deleteActivity(@PathVariable(name = "id") int id) {
 		service.delete(id);
-		return "redirect:/";		
+		return "redirect:/activity";
 	}
 }
