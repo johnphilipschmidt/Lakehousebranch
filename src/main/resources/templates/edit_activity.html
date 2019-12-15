@@ -3,30 +3,40 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-<title>Create New Activity</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<title>Edit Activity</title>
 </head>
 <body>
 	<div align="center">
-		<h1>Create New Activity</h1>
+		<h1>Edit Activity</h1>
 		<br />
-		<form action="#" th:action="@{/save}" th:object="${product}"
+		<form action="#" th:action="@{/activity/save}" th:object="${activity}"
 			method="post">
 
 			<table border="0" cellpadding="10">
-				<tr>
-					<td>Activity Name:</td>
-					<td><input type="text" th:field="*{name}" /></td>
+				<tr>				
+					<td>Activity ID:</td>
+					<td>
+						<input type="text" th:field="*{id}" readonly="readonly" />
+					</td>
+				</tr>			
+				<tr>				
+					<td>=Activity Name:</td>
+					<td>
+						<input type="text" th:field="*{name}" />
+					</td>
 				</tr>
 				<tr>
-					<td>Location:</td>
+					<td>Brand:</td>
 					<td><input type="text" th:field="*{brand}" /></td>
 				</tr>
 				<tr>
-					<td> Link</td>:</td>
+					<td>Made In:</td>
 					<td><input type="text" th:field="*{madein}" /></td>
 				</tr>
 				<tr>
-					<td>Average Cost</td>
+					<td>Price:</td>
 					<td><input type="text" th:field="*{price}" /></td>
 				</tr>								
 				<tr>

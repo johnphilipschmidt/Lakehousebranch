@@ -15,42 +15,42 @@ import java.util.List;
 public class ActivityController {
 
 	@Autowired
-	private ProductService service; 
+	private ActivityService service;
 	
 	@RequestMapping("/activity")
 	public String viewActivityPage(Model model) {
-		List<Product> listProducts = service.listAll();
-		model.addAttribute("listProducts", listProducts);
+		List<Activity> listActivities = service.listAll();
+		model.addAttribute("listActivities", listActivities);
 		
 		return "activity";
 	}
 	
 	@RequestMapping("/activity/new")
-	public String showNewProductPage(Model model) {
-		Product product = new Product();
-		model.addAttribute("product", product);
+	public String showNewActivityPage(Model model) {
+		Activity activity = new Activity();
+		model.addAttribute("activity", activity);
 		
-		return "new_product";
+		return "new_activity";
 	}
 	
 	@RequestMapping(value = "/activity/save", method = RequestMethod.POST)
-	public String saveProduct(@ModelAttribute("product") Product product) {
-		service.save(product);
+	public String saveActivity(@ModelAttribute("activity") Activity activity) {
+		service.save(activity);
 		
-		return "redirect:/";
+		return "redirect:/activity";
 	}
 	
 	@RequestMapping("/activity/edit/{id}")
-	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
-		ModelAndView mav = new ModelAndView("edit_product");
-		Product product = service.get(id);
-		mav.addObject("product", product);
+	public ModelAndView showEditActivityPage(@PathVariable(name = "id") int id) {
+		ModelAndView mav = new ModelAndView("edit_activity");
+		Activity activity = service.get(id);
+		mav.addObject("activity", activity);
 		
 		return mav;
 	}
 	
 	@RequestMapping("/activity/delete/{id}")
-	public String deleteProduct(@PathVariable(name = "id") int id) {
+	public String deleteActivity(@PathVariable(name = "id") int id) {
 		service.delete(id);
 		return "redirect:/";		
 	}

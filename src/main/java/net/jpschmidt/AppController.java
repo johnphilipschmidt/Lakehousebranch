@@ -15,8 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class AppController {
 
 	@Autowired
-	private ProductService service; 
-	
+	private ProductService service;
+	private ActivityService activityService;
+
 	@RequestMapping("/")
 	public String viewHomePage(Model model) {
 		List<Product> listProducts = service.listAll();
@@ -40,7 +41,7 @@ public class AppController {
 		
 		return "redirect:/";
 	}
-	
+
 	@RequestMapping("/edit/{id}")
 	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
 		ModelAndView mav = new ModelAndView("edit_product");

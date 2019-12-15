@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb">
-        <schema name="db_example" object-types="view, table" />
+        <schema name="lakesite" object-types="column, constraint, index, procedure, dataset trigger, function, table, view" />
       </connection>
     </loaded-nodes>
   </component>
@@ -41,9 +41,16 @@
     <connection id="a7318afe-c55e-4402-b5eb-d44a3ba448eb" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb" dataset="lakesite.product" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb" dataset="db_example.Product" active-filter-id="f371592e-1abe-41d2-8c92-e565dd78f087">
       <filter id="f371592e-1abe-41d2-8c92-e565dd78f087" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb" dataset="lakesite.activity" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb" dataset="db_example.activity" active-filter-id="">
+      <filter id="8897acdd-1aa9-4fbe-b08b-ffa8d8ad8c84" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id_activity" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
   </component>
