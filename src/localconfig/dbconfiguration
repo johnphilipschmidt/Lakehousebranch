@@ -1,0 +1,6 @@
+create database lakesite
+create user 'springuser'@'%' identified by 'ThePassword'
+grant all on lakesite.* to 'springuser'@'%'
+create database db_example
+create user 'springuser'@'%' identified by 'ThePassword'
+grant all on db_example.* to 'springuser'@'%'
