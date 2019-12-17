@@ -1,41 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <title class="text-black-50">284 Townville SC</title>
-
-    <div class="jumbotron small ">
 
 
-        <h1 class="display-4">Activities</h1>
-        <p class="lead">Lake Front escape on Lake Hartwell SC 284 Penny Lane Townville, South Carolina only 15 minutes
-            from Clemson!</p>
 
-        <div class="container">
-            <img class="percent-20" th:src="@{/images/284pennylane.jpg}" th:width="200" alt="front"/>
-            <img class="percent-20" th:src="@{/images/284inside.jpg}" th:width="200" alt="inside"/>
-            <img class="percent-20" th:src="@{/images/284masterbedroom.jpg}" th:width="200" alt="inside"/>
-            <img class="percent-20" th:src="@{/images/284deck.jpg}" th:width="200" alt="inside"/>
-            <img class="percent-20" th:src="@{/images/284dock.jpg}" th:width="200" alt="dock"/>
-        </div>
-
-        <!-- <div class="container">
-             <img class="percent-20" th:src=@{/images/284pennylane.jpg}"" th:width="200" alt="front"/>
-             <img class="percent-20" th:src="@{/images/284inside.jpg}" th:width="200" alt="inside"/>
-             <img class="percent-20" th:src="@{/images/284masterbedroom.jpg}" th:width="200" alt="inside"/>
-             <img class="percent-20" th:src="@{/images/284deck.jpg}" th:width="200" alt="inside"/>
-             <img class="percent-20" th:src="@{/images/284dock.jpg}" th:width="200" alt="dock"/>
-         </div>
-         -->
-    </div>
-</head>
-
-<body>
-
-
+<!--
 <nav class="navbar navbar-expand-sm navbar-light bg-info">
     <a class="navbar-brand" href="/"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -49,7 +18,7 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/activity">Activity</a>
+                <a class="nav-link" data-target="body" href="/activity">Activity</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/rental">Rentals</a>
@@ -64,6 +33,7 @@
         </form>
     </div>
 </nav>
+-->
 <div align="center">
 
 
@@ -102,7 +72,7 @@
 
 </div>
 
-</body>
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

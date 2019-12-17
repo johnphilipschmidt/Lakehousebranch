@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb">
-        <schema name="lakesite" object-types="column, constraint, index, procedure, dataset trigger, function, table, view" />
+        <schema name="lakesite" object-types="procedure, function, table, view" />
       </connection>
     </loaded-nodes>
   </component>
