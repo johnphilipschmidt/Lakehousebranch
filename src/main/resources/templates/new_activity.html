@@ -1,41 +1,50 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8" />
-<title>Create New Activity</title>
-</head>
-<body>
-	<div align="center">
-		<h1>Create New Activity</h1>
-		<br />
-		<form action="#" th:action="@{/activity/save}" th:object="${activity}"
-			method="post">
 
-			<table border="0" cellpadding="10">
-				<tr>
-					<td>Activity Name:</td>
-					<td><input type="text" th:field="*{name}" /></td>
-				</tr>
-				<tr>
-					<td>Location:</td>
-					<td><input type="text" th:field="*{brand}" /></td>
-				</tr>
-				<tr>
-					<td> Link</td>:</td>
-					<td><input type="text" th:field="*{madein}" /></td>
-				</tr>
-				<tr>
-					<td>Average Cost</td>
-					<td><input type="text" th:field="*{price}" /></td>
-				</tr>								
-				<tr>
-					<td colspan="2"><button type="submit">Save</button> </td>
-				</tr>
-			</table>
-		</form>
-	</div>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}"
+      with:title="New Activity">
+<body>
+<th:block layout:fragment="content">
+    <div class="row">
+        <div class="col-md-6">
+
+            <!--/* only th:fragment form is returned for an XMLHttpRequest */-->
+            <th:block th:fragment="form">
+                <form action="#" th:action="@{/activity/save}" th:object="${activity}"
+                      method="post">
+
+                    <table border="0" cellpadding="10">
+                        <tr>
+                            <td>Activity Name:</td>
+                            <td><input type="text" th:field="*{name}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Location:</td>
+                            <td><input type="text" th:field="*{brand}"/></td>
+                        </tr>
+                        <tr>
+                            <td> Link</td>
+                            :</td>
+                            <td><input type="text" th:field="*{madein}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Average Cost</td>
+                            <td><input type="text" th:field="*{price}"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="submit">Save</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </th:block>
+        </div>
+    </div>
+
+</th:block>
 </body>
-<script type="text/javascript" src="static/js/popper.js"></script>
-<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+
 </html>

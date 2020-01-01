@@ -14,43 +14,43 @@ import java.util.List;
 @Controller
 public class RestaurantController {
 	@Autowired
-	private ProductService service; 
+	private RestaurantService restaurantService;
 	
 	@RequestMapping("/restaurant")
 	public String viewRestaurantPage(Model model) {
-		List<Product> listProducts = service.listAll();
-		model.addAttribute("listProducts", listProducts);
+		List<Restaurant> listRestaurants = restaurantService.listAll ();
+		model.addAttribute ("listRestaurants", listRestaurants);
 		
 		return "restaurant";
 	}
 	
 	@RequestMapping("/restaurant/new")
-	public String showNewProductPage(Model model) {
-		Product product = new Product();
-		model.addAttribute("product", product);
-		
-		return "new_product";
+	public String showNewRestaurantPage (Model model) {
+		Restaurant restaurant = new Restaurant ();
+		model.addAttribute ("restaurant", restaurant);
+
+		return "new_restaurant";
 	}
 	
 	@RequestMapping(value = "/restaurant/save", method = RequestMethod.POST)
-	public String saveProduct(@ModelAttribute("product") Product product) {
-		service.save(product);
-		
-		return "redirect:/";
+	public String saveRestaurant (@ModelAttribute("restaurant") Restaurant restaurant) {
+		restaurantService.save (restaurant);
+
+		return "redirect:/restaurant";
 	}
 	
 	@RequestMapping("/restaurant/edit/{id}")
-	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
-		ModelAndView mav = new ModelAndView("edit_product");
-		Product product = service.get(id);
-		mav.addObject("product", product);
+	public ModelAndView showEditRestaurantPage (@PathVariable(name = "id") int id) {
+		ModelAndView mav = new ModelAndView ("edit_restaurant");
+		Restaurant restaurant = restaurantService.get (id);
+		mav.addObject ("restaurant", restaurant);
 		
 		return mav;
 	}
 	
 	@RequestMapping("/restaurant/delete/{id}")
-	public String deleteProduct(@PathVariable(name = "id") int id) {
-		service.delete(id);
-		return "redirect:/";		
+	public String deleteRestaurant (@PathVariable(name = "id") int id) {
+		restaurantService.delete (id);
+		return "redirect:/restaurant";
 	}
 }

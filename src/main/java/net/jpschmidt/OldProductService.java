@@ -8,20 +8,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class ProductService {
+public class OldProductService {
 
 	@Autowired
-	private ProductRepository repo;
-	
-	public List<Product> listAll() {
+	private OldProductRepository repo;
+
+	public List<OldProduct> listAll () {
 		return repo.findAll();
 	}
-	
-	public void save(Product product) {
+
+	public void save (OldProduct product) {
 		repo.save(product);
 	}
-	
-	public Product get(long id) {
+
+	public OldProduct get (long id) {
 		return repo.findById(id).get();
 	}
 	

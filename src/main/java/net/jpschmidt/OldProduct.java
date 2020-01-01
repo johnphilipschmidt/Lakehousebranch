@@ -6,17 +6,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Product {
+public class OldProduct {
 	private Long id;
 	private String name;
 	private String brand;
 	private String madein;
 	private float price;
 
-	protected Product() {
+	protected OldProduct () {
 	}
 
-	protected Product(Long id, String name, String brand, String madein, float price) {
+	protected OldProduct (Long id, String name, String brand, String madein, float price) {
 		super();
 		this.id = id;
 		this.name = name;

@@ -1,0 +1,45 @@
+<div th:fragment="activity" class="container"
+     xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+    <div align="center">
+
+
+        <h1> Activities</h1>
+        <a href="/activity/new">Fragment New Activity</a>
+        <br/><br/>
+        <table border="1" cellpadding="10">
+            <thead>
+            <tr>
+                <th class="arrow-button">Activity ID</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Made In</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="activity : ${listActivities}">
+                <td th:text="${activity.id}">Activity ID</td>
+                <td th:text="${activity.name}">Name</td>
+                <td th:text="${activity.brand}">Brand</td>
+                <td th:text="${activity.madein}">Made in</td>
+                <td th:text="${activity.price}">Price</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${activity.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${activity.id}}">Delete</a>
+                </td>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+</div>
+</html>

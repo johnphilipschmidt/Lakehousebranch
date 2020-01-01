@@ -15,43 +15,43 @@ import java.util.List;
 public class RentalController {
 
 	@Autowired
-	private ProductService service; 
+    private RentalService service;
 	
 	@RequestMapping("/rental")
 	public String viewRentalPage(Model model) {
-		List<Product> listProducts = service.listAll();
-		model.addAttribute("listProducts", listProducts);
+        List<Rental> listRentals = service.listAll ();
+        model.addAttribute ("listRentals", listRentals);
 		
 		return "rental";
 	}
 	
 	@RequestMapping("/rental/new")
-	public String showNewProductPage(Model model) {
-		Product product = new Product();
-		model.addAttribute("product", product);
-		
-		return "new_product";
+    public String showNewRentalPage (Model model) {
+        Rental rental = new Rental ();
+        model.addAttribute ("rental", rental);
+
+        return "new_rental";
 	}
 	
 	@RequestMapping(value = "/rental/save", method = RequestMethod.POST)
-	public String saveProduct(@ModelAttribute("product") Product product) {
-		service.save(product);
-		
-		return "redirect:/";
+    public String saveRental (@ModelAttribute("rental") Rental rental) {
+        service.save (rental);
+
+        return "redirect:/rental";
 	}
 	
 	@RequestMapping("/rental/edit/{id}")
-	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
-		ModelAndView mav = new ModelAndView("edit_product");
-		Product product = service.get(id);
-		mav.addObject("product", product);
+    public ModelAndView showEditRentalPage (@PathVariable(name = "id") int id) {
+        ModelAndView mav = new ModelAndView ("edit_rental");
+        Rental rental = service.get (id);
+        mav.addObject ("rental", rental);
 		
 		return mav;
 	}
 	
 	@RequestMapping("/rental/delete/{id}")
-	public String deleteProduct(@PathVariable(name = "id") int id) {
+    public String deleteRental (@PathVariable(name = "id") int id) {
 		service.delete(id);
-		return "redirect:/";		
+        return "redirect:/rental";
 	}
 }

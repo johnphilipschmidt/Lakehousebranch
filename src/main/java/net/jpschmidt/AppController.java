@@ -15,12 +15,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class AppController {
 
 	@Autowired
-	private ProductService service;
+	private OldProductService service;
 	private ActivityService activityService;
 
 	@RequestMapping("/")
 	public String viewHomePage(Model model) {
-		List<Product> listProducts = service.listAll();
+		List<OldProduct> listProducts = service.listAll ();
 		model.addAttribute("listProducts", listProducts);
 		
 		return "index";
@@ -29,14 +29,15 @@ public class AppController {
 
 	@RequestMapping("/new")
 	public String showNewProductPage(Model model) {
-		Product product = new Product();
+		OldProduct product = new OldProduct ();
 		model.addAttribute("product", product);
 		
 		return "new_product";
 	}
-	
+
+
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String saveProduct(@ModelAttribute("product") Product product) {
+	public String saveProduct (@ModelAttribute("product") OldProduct product) {
 		service.save(product);
 		System.out.println ("I am still here after actvity");
 		return "redirect:/";
@@ -45,7 +46,7 @@ public class AppController {
 	@RequestMapping("/edit/{id}")
 	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
 		ModelAndView mav = new ModelAndView("edit_product");
-		Product product = service.get(id);
+		OldProduct product = service.get (id);
 		mav.addObject("product", product);
 		
 		return mav;

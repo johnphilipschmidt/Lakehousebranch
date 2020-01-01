@@ -24,15 +24,17 @@ public class ActivityController {
 		
 		return "activity";
 	}
-	
+
 	@RequestMapping("/activity/new")
 	public String showNewActivityPage(Model model) {
+		System.out.println ("A controller act new");
 		Activity activity = new Activity();
 		model.addAttribute("activity", activity);
 		
 		return "new_activity";
 	}
-	
+
+
 	@RequestMapping(value = "/activity/save", method = RequestMethod.POST)
 	public String saveActivity(@ModelAttribute("activity") Activity activity) {
 		service.save(activity);
