@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:with="http://www.thymeleaf.org/extras/with"
+	  layout:decorate="~{layout}"
+	  with:title="New Activity">
 <head>
-<meta charset="utf-8" />
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-<title>Edit Activity</title>
+	<title>Edit Activity</title>
 </head>
 <body>
+<th:block layout:fragment="content">
 	<div align="center">
 		<h1>Edit Activity</h1>
 		<br />
@@ -15,13 +18,13 @@
 			  method="post">
 
 			<table border="0" cellpadding="10">
-				<tr>				
+				<tr>
 					<td>Activity ID:</td>
 					<td>
 						<input type="text" th:field="*{id}" readonly="readonly" />
 					</td>
-				</tr>			
-				<tr>				
+				</tr>
+				<tr>
 					<td>=Activity Name:</td>
 					<td>
 						<input type="text" th:field="*{name}" />
@@ -38,14 +41,15 @@
 				<tr>
 					<td>Price:</td>
 					<td><input type="text" th:field="*{price}" /></td>
-				</tr>								
+				</tr>
 				<tr>
 					<td colspan="2"><button type="submit">Save</button> </td>
 				</tr>
 			</table>
 		</form>
 	</div>
+</th:block>
 </body>
-<script type="text/javascript" src="static/js/popper.js"></script>
-<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+
 </html>

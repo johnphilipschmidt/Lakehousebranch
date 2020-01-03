@@ -5,46 +5,50 @@
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}"
       with:title="New Activity">
+
 <body>
 <th:block layout:fragment="content">
-    <div class="row">
-        <div class="col-md-6">
+    <div align="center">
+        <div class="row">
+            <div class="col-md-12">
 
-            <!--/* only th:fragment form is returned for an XMLHttpRequest */-->
-            <th:block th:fragment="form">
-                <form action="#" th:action="@{/activity/save}" th:object="${activity}"
-                      method="post">
+                <th:block th:fragment="form">
+                    <form action="#" th:action="@{/activity/save}" th:object="${activity}"
+                          method="post">
 
-                    <table border="0" cellpadding="10">
-                        <tr>
-                            <td>Activity Name:</td>
-                            <td><input type="text" th:field="*{name}"/></td>
-                        </tr>
-                        <tr>
-                            <td>Location:</td>
-                            <td><input type="text" th:field="*{brand}"/></td>
-                        </tr>
-                        <tr>
-                            <td> Link</td>
-                            :</td>
-                            <td><input type="text" th:field="*{madein}"/></td>
-                        </tr>
-                        <tr>
-                            <td>Average Cost</td>
-                            <td><input type="text" th:field="*{price}"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <button type="submit">Save</button>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </th:block>
+                        <table border="0" cellpadding="10">
+                            <tr>
+                                <td>Activity Name:</td>
+                                <td><input type="text" th:field="*{name}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Location:</td>
+                                <td><input type="text" th:field="*{brand}"/></td>
+                            </tr>
+                            <tr>
+                                <td> Link:</td>
+                                </td>
+                                <td><input type="text" th:field="*{madein}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Average Cost</td>
+                                <td><input type="text" th:field="*{price}"/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <button type="submit">Save</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </th:block>
+            </div>
         </div>
     </div>
-
 </th:block>
 </body>
+<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
 
+<script type="text/javascript" src="js/popper.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </html>

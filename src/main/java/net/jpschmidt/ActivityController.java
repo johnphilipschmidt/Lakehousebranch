@@ -25,14 +25,14 @@ public class ActivityController {
 		return "activity";
 	}
 
-	@RequestMapping("/activity/new")
-	public String showNewActivityPage(Model model) {
-		System.out.println ("A controller act new");
-		Activity activity = new Activity();
-		model.addAttribute("activity", activity);
-		
-		return "new_activity";
-	}
+//	@RequestMapping("/activity/new")
+//	public String showNewActivityPage(Model model) {
+//		System.out.println ("A controller act new");
+//		Activity activity = new Activity();
+//		model.addAttribute("activity", activity);
+//
+//		return "new_activity";
+//	}
 
 
 	@RequestMapping(value = "/activity/save", method = RequestMethod.POST)
@@ -45,6 +45,7 @@ public class ActivityController {
 	
 	@RequestMapping("/activity/edit/{id}")
 	public ModelAndView showEditActivityPage(@PathVariable(name = "id") int id) {
+		System.out.println ("Calling edit activity");
 		ModelAndView mav = new ModelAndView("edit_activity");
 		Activity activity = service.get(id);
 		mav.addObject("activity", activity);

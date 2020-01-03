@@ -15,20 +15,13 @@
     </div>
 </div>
 <th:block layout:fragment="body_end"/>
-<th:block layout:replace="~{fragments/body_scripts :: end}"/>
-</body>
-<!--
-<link rel="stylesheet" href="css/bootstrap.min.css"/>
-<link rel="stylesheet" href="css/bootstrap-grid.min.css"/>
-<link rel="stylesheet" href="css/bootstrap-reboot.min.css"/>
--->
-<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
-<link type="text/css" href="css/index.css" rel="stylesheet"/>
 
-<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
-<link rel="stylesheet" th:href="@{/styles.css}"/>
-<script type="text/javascript" src="static/js/popper.js"></script>
-<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+</body>
+<link rel="stylesheet" type="text/css" media="all"
+      href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
+<script type="text/javascript" src="js/popper.js"></script>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </html>
 
 

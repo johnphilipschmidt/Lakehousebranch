@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title><!DOCTYPE html>
 
 
-        <html lang="en" xmlns:th="http://www.thymeleaf.org"
+        <html lang="en"
               xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
               xmlns:with="http://www.thymeleaf.org/extras/with"
               layout:decorate="~{layout}"
@@ -68,6 +68,9 @@
 <body>
 
 </body>
-<script type="text/javascript" src="static/js/popper.js"></script>
-<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all"
+      href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
+
+<script type="text/javascript" src="js/popper.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </html>

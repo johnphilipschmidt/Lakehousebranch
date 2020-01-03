@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8"/>
-    <title>Edit Restaurant</title>
-</head>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}"
+      with:title="New Activity">
+
 <body>
+<th:block layout:fragment="content">
 <div align="center">
     <h1>Edit Restaurant</h1>
     <br/>
@@ -45,5 +47,6 @@
         </table>
     </form>
 </div>
+</th:block>
 </body>
 </html>

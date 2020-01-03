@@ -3,7 +3,14 @@ package net.jpschmidt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.thymeleaf.ITemplateEngine;
+import org.thymeleaf.context.WebContext;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 @Service
@@ -28,4 +35,5 @@ public class ActivityService {
 	public void delete(long id) {
 		repo.deleteById(id);
 	}
+
 }

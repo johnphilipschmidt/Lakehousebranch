@@ -14,4 +14,5 @@ public class AppMain {
         engine.addDialect (new LayoutDialect (new GroupingStrategy ()));
 		SpringApplication.run(AppMain.class, args);
 	}
+
 }

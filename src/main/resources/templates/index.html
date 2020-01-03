@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
+
     <meta charset="UTF-8">
     <title><!DOCTYPE html>
 
@@ -15,7 +16,7 @@
             <!--
                 <div  th:replace="fragments/activity :: activity"></div>
                 -->
-            <div> Content here</div>
+
         </th:block>
         <th:block layout:fragment="body_end">
             <div class="modal fade" tabindex="-1" role="dialog" id="cityModal">
@@ -39,8 +40,12 @@
 <body>
 
 </body>
-<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
-<link type="text/css" href="css/index.css" rel="stylesheet"/>
+<link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+      href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" href="css/calendar.css">
 <script type="text/javascript" src="static/js/popper.js"></script>
 <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+
+
 </html>
