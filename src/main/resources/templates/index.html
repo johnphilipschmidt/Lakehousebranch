@@ -12,11 +12,11 @@
               layout:decorate="~{layout}"
               with:title="Activity">
         <th:block layout:fragment="content">
-
-            <!--
-                <div  th:replace="fragments/activity :: activity"></div>
-                -->
-
+            <div class="container align-content-center">
+                <iframe src="https://calendar.google.com/calendar/embed?src=n8k7uo3b51h86vv1o30s1c2gvg%40group.calendar.google.com&ctz=America%2FNew_York"
+                        style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+            <!-- <th:block layout:insert="~{fragments/calenderfrag}"/>-->
         </th:block>
         <th:block layout:fragment="body_end">
             <div class="modal fade" tabindex="-1" role="dialog" id="cityModal">
