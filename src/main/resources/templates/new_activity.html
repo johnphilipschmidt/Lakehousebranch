@@ -6,6 +6,10 @@
       layout:decorate="~{layout}"
       with:title="New Activity">
 
+<link rel="stylesheet" type="text/css" media="all"
+      href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+      href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
 <body>
 <th:block layout:fragment="content">
     <div align="center">
@@ -47,8 +51,7 @@
     </div>
 </th:block>
 </body>
-<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
 
-<script type="text/javascript" src="js/popper.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" th:src="@{/activity/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/activity/js/popper.js}"></script>
 </html>

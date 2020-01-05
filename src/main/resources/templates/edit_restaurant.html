@@ -5,7 +5,10 @@
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}"
       with:title="New Activity">
-
+<link rel="stylesheet" type="text/css" media="all"
+      href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+      href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
 <body>
 <th:block layout:fragment="content">
 <div align="center">
@@ -49,4 +52,6 @@
 </div>
 </th:block>
 </body>
+<script type="text/javascript" th:src="@{/restaurant/edit/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/restaurant/edit/js/popper.js}"></script>
 </html>

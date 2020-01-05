@@ -4,37 +4,38 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}"
-      with:title="New Rental">
+      with:title="New Rates">
+
 <link rel="stylesheet" type="text/css" media="all"
       href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
 <link rel="stylesheet" type="text/css" media="all"
       href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
-
 <body>
 <th:block layout:fragment="content">
     <div align="center">
         <div class="row">
             <div class="col-md-12">
+
                 <th:block th:fragment="form">
-                    <form action="#" th:action="@{/rental/save}" th:object="${rental}"
+                    <form action="#" th:action="@{/rates/save}" th:object="${rates}"
                           method="post">
 
                         <table border="0" cellpadding="10">
                             <tr>
-                                <td>Rental Name:</td>
+                                <td>Rates Name:</td>
                                 <td><input type="text" th:field="*{name}"/></td>
                             </tr>
                             <tr>
-                                <td>Location:</td>
-                                <td><input type="text" th:field="*{brand}"/></td>
+                                <td>Start:</td>
+                                <td><input type="text" th:field="*{start}"/></td>
                             </tr>
                             <tr>
-                                <td> Link</td>
-                                :</td>
-                                <td><input type="text" th:field="*{madein}"/></td>
+                                <td> End:</td>
+                                </td>
+                                <td><input type="text" th:field="*{end}"/></td>
                             </tr>
                             <tr>
-                                <td>Average Cost</td>
+                                <td>Daily Price</td>
                                 <td><input type="text" th:field="*{price}"/></td>
                             </tr>
                             <tr>
@@ -50,6 +51,7 @@
     </div>
 </th:block>
 </body>
-<script type="text/javascript" th:src="@{/rental/js/bootstrap.min.js}"></script>
-<script type="text/javascript" th:src="@{/rental/js/popper.js}"></script>
+
+<script type="text/javascript" th:src="@{/rates/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/rates/js/popper.js}"></script>
 </html>

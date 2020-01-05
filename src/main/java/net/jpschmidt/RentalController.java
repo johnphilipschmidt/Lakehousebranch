@@ -25,13 +25,13 @@ public class RentalController {
 		return "rental";
 	}
 
-//	@RequestMapping("/rental/new")
-//    public String showNewRentalPage (Model model) {
-//        Rental rental = new Rental ();
-//        model.addAttribute ("rental", rental);
-//
-//        return "new_rental";
-//	}
+    @RequestMapping("/rental/new")
+    public String showNewRentalPage (Model model) {
+        Rental rental = new Rental ();
+        model.addAttribute ("rental", rental);
+
+        return "new_rental";
+    }
 	
 	@RequestMapping(value = "/rental/save", method = RequestMethod.POST)
     public String saveRental (@ModelAttribute("rental") Rental rental) {

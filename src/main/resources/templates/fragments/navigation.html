@@ -1,5 +1,6 @@
 <html
         xmlns:th="http://www.thymeleaf.org">
+
 <nav class="navbar navbar-expand-sm navbar-light bg-info">
     <a class="navbar-brand" href="/"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -13,6 +14,9 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" data-target="body" th:href="@{~/rates}">Rates</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" data-target="body" th:href="@{~/activity}">Activities</a>
             </li>
             <li class="nav-item">
@@ -20,6 +24,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{~/restaurant}">Restaurants</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-target="body" href="#">Contact Us!</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -30,7 +37,8 @@
 </nav>
 <link rel="stylesheet" type="text/css" media="all"
       href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
-
-<script type="text/javascript" src="js/popper.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all"
+      href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/popper.js}"></script>
 </html>

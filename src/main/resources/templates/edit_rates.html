@@ -4,7 +4,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}"
-      with:title="New Activity">
+      with:title="New Rates">
 <link rel="stylesheet" type="text/css" media="all"
       href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
 <link rel="stylesheet" type="text/css" media="all"
@@ -12,36 +12,36 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title>Edit Activity</title>
+    <title>Edit Rates</title>
 </head>
 <body>
 <th:block layout:fragment="content">
     <div align="center">
-        <h1>Edit Activity</h1>
+        <h1>Edit Rates</h1>
         <br/>
-        <form action="#" th:action="@{/activity/save}" th:object="${activity}"
+        <form action="#" th:action="@{/rates/save}" th:object="${rates}"
               method="post">
 
             <table border="0" cellpadding="10">
                 <tr>
-                    <td>Activity ID:</td>
+                    <td>Rates ID:</td>
                     <td>
                         <input type="text" th:field="*{id}" readonly="readonly"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>=Activity Name:</td>
+                    <td>=Rates Name:</td>
                     <td>
                         <input type="text" th:field="*{name}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Brand:</td>
-                    <td><input type="text" th:field="*{brand}"/></td>
+                    <td><input type="text" th:field="*{start}"/></td>
                 </tr>
                 <tr>
                     <td>Made In:</td>
-                    <td><input type="text" th:field="*{madein}"/></td>
+                    <td><input type="text" th:field="*{end}"/></td>
                 </tr>
                 <tr>
                     <td>Price:</td>
@@ -58,7 +58,7 @@
 </th:block>
 </body>
 
-<script type="text/javascript" th:src="@{/activity/edit/js/bootstrap.min.js}"></script>
-<script type="text/javascript" th:src="@{/activity/edit/js/popper.js}"></script>
+<script type="text/javascript" th:src="@{/rates/edit/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/rates/edit/js/popper.js}"></script>
 
 </html>

@@ -34,23 +34,8 @@ public class AppController {
 		return "index";
 	}
 
-	@RequestMapping("/activity/new")
-	public String showNewActivityPage (Model model) {
-		System.out.println ("A controller act new");
-		Activity activity = new Activity ();
-		model.addAttribute ("activity", activity);
 
-		return "new_activity";
-	}
-
-	@RequestMapping("/rental/new")
-	public String showNewRentalPage (Model model) {
-
-		Rental rental = new Rental ();
-		model.addAttribute ("rental", rental);
-
-		return "new_rental";
-	}
+//
 //	@RequestMapping("/new")
 //	public String showNewProductPage(Model model) {
 //		OldProduct product = new OldProduct ();

@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb">
-        <schema name="lakesite" object-types="view, table" />
+        <schema name="lakesite" object-types="table, index, view, function, column, procedure, dataset trigger, constraint" />
       </connection>
     </loaded-nodes>
   </component>
@@ -47,7 +47,9 @@
         <condition column="id" operator="=" value="1" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb" dataset="lakesite.rate_period" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb" dataset="lakesite.activity" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb" dataset="lakesite.rates" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a7318afe-c55e-4402-b5eb-d44a3ba448eb" dataset="db_example.activity" active-filter-id="">
       <filter id="8897acdd-1aa9-4fbe-b08b-ffa8d8ad8c84" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id_activity" operator="=" value="" active="true" />
@@ -96,7 +98,7 @@
           <deprecated-pwd value="VGhlUGFzc3dvcmQ=" />
         </database>
         <properties>
-          <auto-commit value="false" />
+          <auto-commit value="true" />
         </properties>
         <ssh-settings>
           <active value="false" />

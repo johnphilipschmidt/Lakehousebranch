@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lake house<!DOCTYPE html>
+
+
+        <html lang="en" xmlns:th="http://www.thymeleaf.org"
+              xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+              xmlns:with="http://www.thymeleaf.org/extras/with"
+              layout:decorate="~{layout}"
+              with:title="Rates">
+
+        <th:block layout:fragment="content">
+
+            <div align="center">
+
+
+                <h1>Rates</h1>
+                <a href="/rates/new">Create New Rate</a>
+                <br/><br/>
+                <table border="1" cellpadding="10">
+                    <thead>
+                    <tr>
+                        <th class="arrow-button">Rates ID</th>
+                        <th>Name</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Price</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="rates : ${listRates}">
+                        <td th:text="${rates.id}">Rates ID</td>
+                        <td th:text="${rates.name}">Name</td>
+                        <td th:text="${rates.start}">Start</td>
+                        <td th:text="${rates.end}">End</td>
+
+
+                        <td>
+                            <a th:href="@{'/rates/edit/' + ${rates.id}}">Edit</a>
+                            &nbsp;&nbsp;&nbsp;
+                            <a th:href="@{'/rates/delete/' + ${rates.id}}">Delete</a>
+                        </td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </th:block>
+
+        </html>
+    </title>
+</head>
+<body>
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+

@@ -4,9 +4,10 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <th:block layout:insert="~{fragments/htmlhead}"/>
+
 <body>
 <th:block layout:replace="~{fragments/navigation}"/>
-<div class="container-fluid">
+<div class="container-fluid small">
     <div class="row">
         <div class="col-md-12">
             <th:block layout:insert="~{fragments/pagetitle}"/>
@@ -19,9 +20,10 @@
 </body>
 <link rel="stylesheet" type="text/css" media="all"
       href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
-<script type="text/javascript" src="js/popper.js"></script>
-
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all"
+      href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/popper.js}"></script>
 </html>
 
 
