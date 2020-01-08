@@ -23,20 +23,35 @@
                     <thead>
                     <tr>
                         <th class="arrow-button">Activity ID</th>
+                        <th>Date From:</th>
+                        <th>Date To:</th>
                         <th>Name</th>
-                        <th>Brand</th>
-                        <th>Made In</th>
-                        <th>Price</th>
-                        <th>Actions</th>
+                        <th>Location</th>
+                        <th>Info:</th>
+                        <th>Link:</th>
+                        <th>Cost Range:</th>
+                        <th>Fun Rating:</th>
+                        <th>Distance By Boat:</th>
+                        <th>Distance By Car:</th>
+                        <th>Notes:</th>
+                        <th>Enabled:</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="activity : ${listActivities}">
                         <td th:text="${activity.id}">Activity ID</td>
+                        <td th:text="${activity.fromDate}">From</td>
+                        <td th:text="${activity.toDate}">To</td>
                         <td th:text="${activity.name}">Name</td>
-                        <td th:text="${activity.brand}">Brand</td>
-                        <td th:text="${activity.madein}">Made in</td>
-                        <td th:text="${activity.price}">Price</td>
+                        <td th:text="${activity.location}">Location</td>
+                        <td th:text="${activity.info}">Info</td>
+                        <td th:text="${activity.link}">Link</td>
+                        <td th:text="${activity.costRange}">Cost Range</td>
+                        <td th:text="${activity.funRating}">Fun Rating</td>
+                        <td th:text="${activity.distanceByBoat}">Distance By Boat</td>
+                        <td th:text="${activity.distanceByCar}">Distance By Car</td>
+                        <td th:text="${activity.notes}">Notes</td>
+                        <td th:text="${activity.enabled}">Enabled</td>
                         <td>
                             <a th:href="@{'/activity/edit/' + ${activity.id}}">Edit</a>
                             &nbsp;&nbsp;&nbsp;
@@ -47,6 +62,7 @@
 
                     </tbody>
                 </table>
+                <p th:text="${#temporals.formatISO(localDate)}"></p>
             </div>
         </th:block>
 

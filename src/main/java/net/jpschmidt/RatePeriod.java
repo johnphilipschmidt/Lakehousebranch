@@ -4,19 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity
 public class RatePeriod {
     private Long id;
     String name;
-    Date start;
-    Date end;
+    LocalDate start;
+    LocalDate end;
 
     protected RatePeriod () {
     }
 
-    protected RatePeriod (Long id, String name, Date start, Date end) {
+    protected RatePeriod (Long id, String name, LocalDate start, LocalDate end) {
         super ();
         this.id = id;
         this.name = name;
@@ -44,19 +45,19 @@ public class RatePeriod {
         this.name = name;
     }
 
-    public Date getStart () {
+    public LocalDate getStart () {
         return start;
     }
 
-    public void setStart (Date start) {
+    public void setStart (LocalDate start) {
         this.start = start;
     }
 
-    public Date getEnd () {
+    public LocalDate getEnd () {
         return end;
     }
 
-    public void setEnd (Date end) {
+    public void setEnd (LocalDate end) {
         this.end = end;
     }
 }

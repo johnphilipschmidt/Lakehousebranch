@@ -4,21 +4,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity
 public class Rates {
     private Long id;
     private String name;
-    private Date start;
-    private Date end;
+    private LocalDate start;
+    private LocalDate end;
     private double price;
 
     protected Rates () {
     }
 
 
-    public Rates (Long id, String name, Date start, Date end, double price) {
+    public Rates (Long id, String name, LocalDate start, LocalDate end, double price) {
         super ();
         this.id = id;
         this.name = name;
@@ -55,19 +56,19 @@ public class Rates {
         this.name = name;
     }
 
-    public Date getStart () {
+    public LocalDate getStart () {
         return start;
     }
 
-    public void setStart (Date start) {
+    public void setStart (LocalDate start) {
         this.start = start;
     }
 
-    public Date getEnd () {
+    public LocalDate getEnd () {
         return end;
     }
 
-    public void setEnd (Date end) {
+    public void setEnd (LocalDate end) {
         this.end = end;
     }
 

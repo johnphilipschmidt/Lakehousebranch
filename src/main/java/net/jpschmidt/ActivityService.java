@@ -26,6 +26,7 @@ public class ActivityService {
 	
 	public void save(Activity activity) {
 		repo.save(activity);
+		repo.flush();
 	}
 	
 	public Activity get(long id) {

@@ -20,23 +20,60 @@
                     <form action="#" th:action="@{/activity/save}" th:object="${activity}"
                           method="post">
 
+
                         <table border="0" cellpadding="10">
+                            <input type="hidden" th:field="*{id}" />
                             <tr>
                                 <td>Activity Name:</td>
                                 <td><input type="text" th:field="*{name}"/></td>
                             </tr>
                             <tr>
-                                <td>Location:</td>
-                                <td><input type="text" th:field="*{brand}"/></td>
+                                <td>Start Date</td>
+                                <td><input type="text" th:field="*{fromDate}"/>From</td>
+
+
                             </tr>
                             <tr>
-                                <td> Link:</td>
-                                </td>
-                                <td><input type="text" th:field="*{madein}"/></td>
+                                <td>End Date:</td>
+                                <td> <input type="text" th:field="*{toDate}"/></td>
+
+
                             </tr>
                             <tr>
-                                <td>Average Cost</td>
-                                <td><input type="text" th:field="*{price}"/></td>
+                                <td>Location</td>
+                                <td><input type="text" th:field="*{location}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Info</td>
+                                <td><input type="text" th:field="*{info}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Link</td>
+                                <td><input type="text" th:field="*{link}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Cost Range</td>
+                                <td><input type="text" th:field="*{costRange}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Fun Rating</td>
+                                <td><input type="text" th:field="*{funRating}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Distance By Car</td>
+                                <td><input type="text" th:field="*{distanceByCar}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Distance By Boat</td>
+                                <td><input type="text" th:field="*{distanceByBoat}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Notes</td>
+                                <td><input type="text" th:field="*{notes}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Enabled</td>
+                                <td><input type="text" th:field="*{enabled}"/></td>
                             </tr>
                             <tr>
                                 <td colspan="2">
