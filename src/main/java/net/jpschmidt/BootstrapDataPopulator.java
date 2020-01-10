@@ -6,14 +6,13 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-
-
 import java.util.Iterator;
 import java.util.List;
+
+//Todo Add Master detail form
 
 @Service
 public class BootstrapDataPopulator implements InitializingBean {
@@ -26,6 +25,10 @@ public class BootstrapDataPopulator implements InitializingBean {
     RatePeriodRepository ratePeriodRepository;
     @Autowired
     RatesRepository ratesRepository;
+    @Autowired
+    ProductRepository productRepository;
+    @Autowired
+    ProductDetailRepository productDetailRepository;
 
 
     @Override
@@ -35,6 +38,8 @@ public class BootstrapDataPopulator implements InitializingBean {
         try {
             createRatePeriods ();
             createRateData ();
+            createProductData ();
+            createProductDetailData ();
         } catch (Exception e) {
             LOG.info (e.getMessage ());
         }
@@ -113,4 +118,81 @@ public class BootstrapDataPopulator implements InitializingBean {
             createRatesObject (ratesObject);
         }
     }
+
+    ///////////
+
+    private void createProductObject (Product Product) {
+
+
+        //LOG.info (Products.name+"... creating Product period");
+        productRepository.saveAndFlush (Product);
+        productRepository.flush ();
+
+    }
+
+    private void createProductData () {
+        if (productRepository.count () > 0) {
+            return;
+        }
+
+        LOG.info ("... creating Product Detail codes");
+
+        List<Product> ProductsList = new ArrayList<> ();
+        ProductsList.add (new Product (1L, "Product1", "Brand1", "USA", 1));
+        ProductsList.add (new Product (2L, "Product2", "Brand1", "USA", 1));
+        ProductsList.add (new Product (3L, "Product3", "Brand2", "USA", 5));
+        ProductsList.add (new Product (4L, "Product4", "Brand3", "USA", 5));
+        ProductsList.add (new Product (5L, "Product5", "Brand4", "USA", 5));
+
+
+        Iterator ProductsIterator = ProductsList.iterator ();
+
+        while (ProductsIterator.hasNext ()) {
+
+            Product ProductsObject = (Product) ProductsIterator.next ();
+            System.out.println ("The ArrayList product are:" + ProductsObject.getName ());
+            createProductObject (ProductsObject);
+        }
+    }
+
+    ///////
+    private void createProductDetailObject (ProductDetail productDetail) {
+
+
+        //LOG.info (productDetails.name+"... creating productDetail period");
+        productDetailRepository.saveAndFlush (productDetail);
+        productDetailRepository.flush ();
+
+    }
+
+    private void createProductDetailData () {
+        if (productDetailRepository.count () > 0) {
+            return;
+        }
+
+        LOG.info ("... creating productDetail ");
+
+        List<ProductDetail> productDetailsList = new ArrayList<> ();
+        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (1L, "l", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (1L, "l", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (1L, "l", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (2L, "productDetail2", "Brand1", "USA", 1, new Product (2L, "m", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (2L, "l", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (2L, "l", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (2L, "l", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (3L, "productDetail3", "Brand2", "USA", 5, new Product (3L, "n", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (4L, "productDetail4", "Brand3", "USA", 5, new Product (4L, "o", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (5L, "productDetail5", "Brand4", "USA", 5, new Product (5L, "p", "g", "l", 2)));
+
+
+        Iterator productDetailsIterator = productDetailsList.iterator ();
+
+        while (productDetailsIterator.hasNext ()) {
+
+            ProductDetail productDetailsObject = (ProductDetail) productDetailsIterator.next ();
+            System.out.println ("The ArrayList productDetail are:" + productDetailsObject.getName ());
+            createProductDetailObject (productDetailsObject);
+        }
+    }
+    
 }

@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AppController {
 
 	@Autowired
-	private OldProductService service;
+    private ProductService service;
 	private ActivityService activityService;
 
 	@RequestMapping("/")
@@ -35,7 +35,7 @@ public class AppController {
 
 
 //
-//	@RequestMapping("/new")
+//AppControllerAppController	@RequestMapping("/new")
 //	public String showNewProductPage(Model model) {
 //		OldProduct product = new OldProduct ();
 //		model.addAttribute("product", product);
@@ -45,7 +45,7 @@ public class AppController {
 
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String saveProduct (@ModelAttribute("product") OldProduct product) {
+    public String saveProduct (@ModelAttribute("product") Product product) {
 		service.save(product);
 		System.out.println ("I am still here after actvity");
 		return "redirect:/";
@@ -54,7 +54,7 @@ public class AppController {
 	@RequestMapping("/edit/{id}")
 	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
 		ModelAndView mav = new ModelAndView("edit_product");
-		OldProduct product = service.get (id);
+        Product product = service.get (id);
 		mav.addObject("product", product);
 		
 		return mav;
