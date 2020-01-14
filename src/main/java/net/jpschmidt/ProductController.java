@@ -3,6 +3,7 @@ package net.jpschmidt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,9 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class ProductController {
@@ -25,11 +28,30 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
+    @Autowired
+    private ProductDetailService detailService;
+
     @RequestMapping("/product")
     public String viewProductPage (Model model) {
-        List<Product> listActivities = service.listAll ();
-        model.addAttribute ("listPridct", listActivities);
-//		model.addAttribute("standardDate", new Date());
+
+        Long val;
+        List<Product> listAllProducts = service.listAll ();
+        Iterator iterator = listAllProducts.iterator ();
+        while (iterator.hasNext ()) {
+            Product prod = (Product) iterator.next ();
+            Iterator detailIterator = prod.getProductDetails ().iterator ();
+            while (detailIterator.hasNext ()) {
+                ProductDetail pdtl = (ProductDetail) detailIterator.next ();
+                System.out.println ("Prod:" + prod.getProductId () + " " + "Detail:" + pdtl.getId ());
+            }
+        }
+
+
+        System.out.println ("Products:" + listAllProducts);
+        //List<ProductDetail> productDetails = detailService.listAll ();
+
+        model.addAttribute ("listAllProducts", listAllProducts);
+        //model.addAttribute("standardDate", new Date());
 //		model.addAttribute("localDateTime", LocalDateTime.now());
         //model.addAttribute("fromDate", LocalDate.now());
         //model.addAttribute("toDate", LocalDate.now());
@@ -60,19 +82,20 @@ public class ProductController {
 
     }
 
-    @RequestMapping("/product/edit/{id}")
-    public ModelAndView showEditProductPage (@PathVariable(name = "id") int id) {
+    @RequestMapping("/product/edit/{productId}")
+    public ModelAndView showEditProductPage (@PathVariable(name = "productId") Long productId) {
         System.out.println ("Calling edit product");
         ModelAndView mav = new ModelAndView ("edit_product");
-        Product product = service.get (id);
+        Product product = service.get (productId);
+        System.out.println (product.getProductId ());
         mav.addObject ("product", product);
 
         return mav;
     }
 
-    @RequestMapping("/product/delete/{id}")
-    public String deleteProduct (@PathVariable(name = "id") int id) {
-        service.delete (id);
+    @RequestMapping("/product/delete/{productId}")
+    public String deleteProduct (@PathVariable(name = "productId") Long productId) {
+        service.delete (productId);
         return "redirect:/product";
     }
 

@@ -1,0 +1,182 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}"
+      with:title="Product">
+<head>
+    <meta charset="UTF-8">
+    <title>Lake house</title>
+
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
+
+    <link rel="stylesheet" href="../static/css/datatables.css">
+</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}"
+      with:title="Product">
+
+<th:block layout:fragment="content">
+    <div class="container col-10">
+        <div align="left">
+
+
+            <h1>Product</h1>
+            <a href="/product/new">Create New Product</a>
+            <br/><br/>
+            <table class="table table-striped">
+                <thead>
+                <tr align="left">
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Made In</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                    <th align="center">Detail Information</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+
+
+                <tr th:each="product : ${listAllProducts}">
+
+
+                    <td id="productId" th:text="${product.productId}">Product ID</td>
+                    <td th:text="${product.name}">Name</td>
+                    <td th:text="${product.brand}">Brand</td>
+                    <td th:text="${product.madein}">Made in</td>
+                    <td th:text="${product.price}">Price</td>
+                    <!--
+                    <td>
+                        <input class="button btn-primary" type="button" th:id="getDetail" value="${product.productId}"
+                               th:value="${product.productId}"
+                               th:onclick="'javascript:alert(' + ${product.productId} + ');'"/>
+                    </td>
+                    -->
+                    <td>
+                        <a class="btn btn-primary" th:href="@{'/product/edit/' + ${product.productId}}">Edit</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a class="btn btn-primary" th:href="@{'/product/delete/' + ${product.productId}}">Delete</a>
+                    </td>
+                    <!-- The Details section-->
+
+                    <td>
+
+                        <table class="table table-striped" id="detail-panel">
+                            <thead>
+                            <tr align="left">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Brand</th>
+                                <th>Made In</th>
+                                <th>Price</th>
+                                <th>Actions</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+                            <tr th:each="detail : ${product.productDetails}">
+
+
+                                <td th:text="${detail.id}">ID</td>
+                                <td th:text="${detail.name}">Name</td>
+                                <td th:text="${detail.brand}">Brand</td>
+                                <td th:text="${detail.madein}">Made in</td>
+                                <td th:text="${detail.price}">Price</td>
+
+
+                                <td>
+                                    <a class="btn btn-primary"
+                                       th:href="@{'/productDetail/edit/' + ${detail.id}}">Edit</a>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <a class="btn btn-primary" th:href="@{'/productDetail/delete/' + ${detail.id}}">Delete</a>
+                                </td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="font-weight-bold">Table with divs master detail</div>
+        <div class="table  table-bordered">
+            <div th:each="product : ${listAllProducts}">
+                <div class="border-bottom border-top border-left border-right bg-primary col-sm-2"
+                     th:text="${product.name}"/>
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="text font-weight-bold col-sm-2 border-right border-left border-top border-bottom">ID
+                    </div>
+                    <div class="text col-sm-2 border-right border-left border-top border-bottom">Name</div>
+                </div>
+                <div class="row" th:each="productDetail : ${product.productDetails}">
+                    <div class="col-sm-1"></div>
+                    <div class="text col-sm-2 border-right border-left border-top border-bottom"
+                         th:text="${productDetail.id}">${productDetail.id}
+                    </div>
+                    <div class="text col-sm-2 border-right border-left border-top border-bottom"
+                         th:text="${productDetail.name}">${productDetail.name}
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    </div>
+
+
+</th:block>
+
+</html>
+</title>
+</head>
+<body>
+
+
+</body>
+
+
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/popper.js}"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" th:src="@{/js/datatables.js}"></script>
+
+
+</html>
+
+
+
+
+
+
+
+
+

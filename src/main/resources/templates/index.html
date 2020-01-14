@@ -3,21 +3,66 @@
 <head>
 
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
+    <title>
+        <Lake House
+    </title>
 
-    <title><!DOCTYPE html>
-
-
+</head>
         <html lang="en" xmlns:th="http://www.thymeleaf.org"
               xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
               xmlns:with="http://www.thymeleaf.org/extras/with"
               layout:decorate="~{layout}"
               with:title="Activity">
         <th:block layout:fragment="content">
-            <div class="container align-content-center">
-                <iframe src="https://calendar.google.com/calendar/embed?src=n8k7uo3b51h86vv1o30s1c2gvg%40group.calendar.google.com&ctz=America%2FNew_York"
-                        style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <!-- <th:block layout:insert="~{fragments/calenderfrag}"/>-->
+            <div class="container mt-3">
+                <h4 class="mb-1">Information</h4>
+
+                <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#target1">
+                    About the Lake House
+                </a>
+                <div id="target1" class="collapse">
+                    Just an awesome venue; ready for relaxing and reconnecting with family and friends
+                </div>
+
+                <br><br>
+
+                <button class="btn" data-toggle="collapse" data-target="#target2">
+                    Why Penny Lane over other houses?
+                </button>
+                <div id="target2" class="collapse">
+                    <ul>
+                        <li>Easy Water Access:Smooth slope access to the water versus having to be Billy Goat to get to
+                            the water...
+                        </li>
+                        <li>Large Dock:Large dock for just sitting, fishing or getting ready to get underway.</li>
+                        <li>Electric:Power on the dock for music and lighting</li>
+                        <li>House: The house has three bedrooms and 2 full bath, games</li>
+                        <li>Jacuzzis:An indoor and outdoor Jacuzzi</li>
+                        <li>Deck:A large deck over looking the water for sunning or just enjoying SC</li>
+                        <li>Parking:Parking for four cars</li>
+                        <li>Internet access</li>
+                        <li>Cable TV Direct</li>
+                        <li>Convenience:Fifteen minute boat or car ride to Clemson</li>
+                        <li>Convenience:Fifteen-Thirty minute boat ride to three restaurants-Nami, The Galley, and
+                            <Put the other here Phil>
+                        </li>
+                        <li>Appliances:Washer and Dryer</li>
+                        <li>Appliances:Toaster and Microwave</li>
+                        <li>Water fun:A Kayak</li>
+                        <li>Water fun:A Canoe</li>
+                        <li>Dock: Motorized Boat lift</li>
+                    </ul>
+
+                </div>
+                <div class="container align-content-center">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=n8k7uo3b51h86vv1o30s1c2gvg%40group.calendar.google.com&ctz=America%2FNew_York"
+                            style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <!-- <th:block layout:insert="~{fragments/calenderfrag}"/>-->
         </th:block>
         <th:block layout:fragment="body_end">
             <div class="modal fade" tabindex="-1" role="dialog" id="cityModal">
@@ -42,12 +87,12 @@
 
 </body>
 
-<link rel="stylesheet" type="text/css" media="all"
-      href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
-<link rel="stylesheet" type="text/css" media="all"
-      href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
+
 <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/popper.js}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 
 </html>

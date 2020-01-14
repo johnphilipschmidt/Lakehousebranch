@@ -18,6 +18,9 @@ public class Product implements Serializable {
 	private String madein;
 	private float price;
 
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<ProductDetail> productDetails;
+
 
 	protected Product () {
 	}
@@ -33,11 +36,7 @@ public class Product implements Serializable {
 	}
 
 
-	@OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Set<ProductDetail> productDetails;
-
-
-	public Long getProductId () {
+    public Long getProductId () {
 		return productId;
 	}
 

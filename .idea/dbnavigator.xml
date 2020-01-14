@@ -25,7 +25,7 @@
     <show-object-properties value="false" />
     <loaded-nodes>
       <connection connection-id="b04ce42a-89c6-4249-a8fc-079163c3132e">
-        <schema name="lakesite" object-types="index, constraint, table, procedure, function, view, column, dataset trigger" />
+        <schema name="lakesite" object-types="view, table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -38,9 +38,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="b04ce42a-89c6-4249-a8fc-079163c3132e" object-ref="schemas/lakesite/tables/product_detail" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="50b6303e-b2c0-457b-ab0c-fd20c8284725" />

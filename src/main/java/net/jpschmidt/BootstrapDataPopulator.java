@@ -173,16 +173,16 @@ public class BootstrapDataPopulator implements InitializingBean {
         LOG.info ("... creating productDetail ");
 
         List<ProductDetail> productDetailsList = new ArrayList<> ();
-        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (1L, "l", "g", "l", 2)));
-        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (1L, "l", "g", "l", 2)));
-        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (1L, "l", "g", "l", 2)));
-        productDetailsList.add (new ProductDetail (2L, "productDetail2", "Brand1", "USA", 1, new Product (2L, "m", "g", "l", 2)));
-        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (2L, "l", "g", "l", 2)));
-        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (2L, "l", "g", "l", 2)));
-        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (2L, "l", "g", "l", 2)));
-        productDetailsList.add (new ProductDetail (3L, "productDetail3", "Brand2", "USA", 5, new Product (3L, "n", "g", "l", 2)));
-        productDetailsList.add (new ProductDetail (4L, "productDetail4", "Brand3", "USA", 5, new Product (4L, "o", "g", "l", 2)));
-        productDetailsList.add (new ProductDetail (5L, "productDetail5", "Brand4", "USA", 5, new Product (5L, "p", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (1L, "productDetail1", "Brand1", "USA", 1, new Product (1L, "l", "g", "l", 1)));
+        productDetailsList.add (new ProductDetail (2L, "productDetail2", "Brand1", "USA", 1, new Product (1L, "l", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (3L, "productDetail3", "Brand1", "USA", 1, new Product (1L, "l", "g", "l", 3)));
+        productDetailsList.add (new ProductDetail (4L, "productDetail4", "Brand2", "USA", 1, new Product (2L, "m", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (5L, "productDetail5", "Brand1", "USA", 1, new Product (2L, "l", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (6L, "productDetail6", "Brand1", "USA", 1, new Product (2L, "l", "g", "l", 2)));
+        productDetailsList.add (new ProductDetail (7L, "productDetail7", "Brand1", "USA", 1, new Product (2L, "l", "g", "l", 3)));
+        productDetailsList.add (new ProductDetail (8L, "productDetail8", "Brand2", "USA", 1, new Product (3L, "n", "g", "l", 3)));
+        productDetailsList.add (new ProductDetail (9L, "productDetail9", "Brand3", "USA", 1, new Product (4L, "o", "g", "l", 4)));
+        productDetailsList.add (new ProductDetail (10L, "productDetail10", "Brand4", "USA", 1, new Product (5L, "p", "g", "l", 5)));
 
 
         Iterator productDetailsIterator = productDetailsList.iterator ();

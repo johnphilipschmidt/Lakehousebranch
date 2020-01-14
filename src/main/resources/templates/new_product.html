@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:with="http://www.thymeleaf.org/extras/with"
+	  layout:decorate="~{layout}"
+	  with:title="New Activity">
+<link rel="stylesheet" type="text/css" media="all"
+	  href="../../css/bootstrap.min.css" data-th-href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+	  href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
+
 <head>
 <meta charset="utf-8" />
-<title>Create New Activity</title>
+	<title>Create New Product</title>
 </head>
 <body>
 	<div align="center">

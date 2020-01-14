@@ -26,13 +26,22 @@ public class WebConfig {
                 "/restaurant/js/**",
                 "/restaurant/edit/js/**",
                 "/rates/edit/js/**",
-                "/rates/js/**")
+                "/rates/js/**",
+                "/productDetail/edit/js/**",
+                "/productDetail/js/**",
+                "/product/js/**",
+                "/product/edit/js/**")
                 .addResourceLocations (
                         "classpath:/static/images/",
                         "classpath:/static/css/",
                         "classpath:/static/js/",
                         "classpath:/static/js/",
-                        "classpath:/static/js/");
+                        "classpath:/static/js/",
+                        "classpath:/static/js/",
+                        "classpath:/static/js/",
+                        "classpath:/static/js/",
+                        "classpath:/static/js/"
+                );
     }
     private ISpringTemplateEngine templateEngine(ITemplateResolver templateResolver) {
         SpringTemplateEngine engine = new SpringTemplateEngine();

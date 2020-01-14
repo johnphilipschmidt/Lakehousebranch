@@ -11,24 +11,23 @@
       href="../../css/calendar.css" data-th-href="@{/css/calendar.css}"/>
 
 <head>
-    <
     <meta charset="utf-8"/>
 
-    <title>Edit Product</title>
+    <title>Edit Product Detail</title>
 </head>
 <body>
 <th:block layout:fragment="content">
     <div align="center">
-        <h1>Edit Product</h1>
+        <h1>Edit Product Detail</h1>
         <br/>
-        <form action="#" th:action="@{/product/save}" th:object="${product}"
+        <form action="#" th:action="@{/productDetail/save}" th:object="${productDetail}"
               method="post">
 
             <table border="0" cellpadding="10">
                 <tr>
                     <td>Product ID:</td>
                     <td>
-                        <input type="text" th:field="*{productId}" readonly="readonly"/>
+                        <input type="text" th:field="*{id}" readonly="readonly"/>
                     </td>
                 </tr>
 

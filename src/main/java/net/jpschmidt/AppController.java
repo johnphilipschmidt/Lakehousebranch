@@ -25,60 +25,60 @@ public class AppController {
     private ProductService service;
 	private ActivityService activityService;
 
-	@RequestMapping("/")
-	public String viewHomePage(Model model) {
-//		List<OldProduct> listProducts = service.listAll ();
-//		model.addAttribute("listProducts", listProducts);
-		
-		return "index";
-	}
-
-
+//	@RequestMapping("/")
+//	public String viewHomePage(Model model) {
+////		List<OldProduct> listProducts = service.listAll ();
+////		model.addAttribute("listProducts", listProducts);
 //
-//AppControllerAppController	@RequestMapping("/new")
-//	public String showNewProductPage(Model model) {
-//		OldProduct product = new OldProduct ();
-//		model.addAttribute("product", product);
-//
-//		return "new_product";
+//		return "index";
 //	}
-
-
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveProduct (@ModelAttribute("product") Product product) {
-		service.save(product);
-		System.out.println ("I am still here after actvity");
-		return "redirect:/";
-	}
-
-	@RequestMapping("/edit/{id}")
-	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
-		ModelAndView mav = new ModelAndView("edit_product");
-        Product product = service.get (id);
-		mav.addObject("product", product);
-		
-		return mav;
-	}
-	
-	@RequestMapping("/delete/{id}")
-	public String deleteProduct(@PathVariable(name = "id") int id) {
-		service.delete(id);
-		return "redirect:/";		
-	}
-
-	public void process (
-			final HttpServletRequest request, final HttpServletResponse response,
-			final ServletContext servletContext, final ITemplateEngine templateEngine)
-			throws Exception {
-
-		SimpleDateFormat dateFormat = new SimpleDateFormat ("dd MMMM yyyy");
-		Calendar cal = Calendar.getInstance ();
-
-		WebContext ctx =
-				new WebContext (request, response, servletContext, request.getLocale ());
-		ctx.setVariable ("today", dateFormat.format (cal.getTime ()));
-
-		templateEngine.process ("home", ctx, response.getWriter ());
-
-	}
+//
+//
+////
+////AppControllerAppController	@RequestMapping("/new")
+////	public String showNewProductPage(Model model) {
+////		OldProduct product = new OldProduct ();
+////		model.addAttribute("product", product);
+////
+////		return "new_product";
+////	}
+//
+//
+//	@RequestMapping(value = "/save", method = RequestMethod.POST)
+//    public String saveProduct (@ModelAttribute("product") Product product) {
+//		service.save(product);
+//		System.out.println ("I am still here after actvity");
+//		return "redirect:/";
+//	}
+//
+//	@RequestMapping("/edit/{id}")
+//	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
+//		ModelAndView mav = new ModelAndView("edit_product");
+//        Product product = service.get (id);
+//		mav.addObject("product", product);
+//
+//		return mav;
+//	}
+//
+//	@RequestMapping("/delete/{id}")
+//	public String deleteProduct(@PathVariable(name = "id") int id) {
+//		service.delete(id);
+//		return "redirect:/";
+//	}
+//
+//	public void process (
+//			final HttpServ-98letRequest request, final HttpServletResponse response,
+//			final ServletContext servletContext, final ITemplateEngine templateEngine)
+//			throws Exception {
+//
+//		SimpleDateFormat dateFormat = new SimpleDateFormat ("dd MMMM yyyy");
+//		Calendar cal = Calendar.getInstance ();
+//
+//		WebContext ctx =
+//				new WebContext (request, response, servletContext, request.getLocale ());
+//		ctx.setVariable ("today", dateFormat.format (cal.getTime ()));
+//
+//		templateEngine.process ("home", ctx, response.getWriter ());
+//
+//	}
 }
